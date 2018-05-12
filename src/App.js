@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Controls from './controls/Controls';
 import Playback from './playback/Playback';
+import Player from './player/Player';
 import { withStyles } from 'material-ui';
 
 const styles = ({spacing}) => ({
@@ -15,8 +16,13 @@ class App extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.app}>
-        <Controls />
-        <Playback />
+        <div className={classes.left}>
+          <Controls />
+          <Playback />
+        </div>
+        <div className={classes.right}>
+          <Player />
+        </div>
       </div>
     );
   }
