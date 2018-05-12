@@ -24,13 +24,14 @@ class Controls extends React.Component {
     return (
       <div>
         <h1>Controls</h1>
-        <Button variant="raised" color="primary" onClick={() => {this.perform('takeoff')}}>Take Off</Button>
-        <Button variant="raised" color="primary" onClick={() => {this.perform('land')}}>Land</Button>
-        <Button variant="raised" color="primary" onClick={() => {this.perform('forward')}}>Forward</Button>
-        <Button variant="raised" color="primary" onClick={() => {this.perform('back')}}>Back</Button>
-        <Button variant="fab" color="primary" aria-label="add" className={classes.button}>
-          <AddIcon />
-        </Button>
+        <Button variant="raised" 
+                color="primary"
+                className={classes.button} 
+                onClick={() => {this.perform('takeoff')}}>Take Off</Button>
+        <Button variant="raised" 
+                color="primary"
+                className={classes.button} 
+                onClick={() => {this.perform('land')}}>Land</Button>
       </div>
     );
   }
