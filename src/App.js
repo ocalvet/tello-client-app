@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  async takeOff() {
+    try {
+      const response = await fetch("http://localhost:9081/tello/takeoff");
+      const json = await response.json();
+      console.log('JSON', json);
+    } catch(e) {
+      console.log('E', e);
+    }
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <button onClick={() => {this.takeOff()}}>Take Off</button>
       </div>
     );
   }
