@@ -11,9 +11,10 @@ const styles = ({ spacing }) => {
 
 class Player extends React.Component {
   componentDidMount() {
-    const ctx = this.refs.canvas.getContext('2d');
-    ctx.fillStyle = 'blue';
-    ctx.fillRect(0, 0, 100, 100);
+    const { canvas } = this.refs;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'lightgray';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
 
   render() {

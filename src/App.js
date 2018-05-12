@@ -7,7 +7,18 @@ import { withStyles } from 'material-ui';
 
 const styles = ({spacing}) => ({
   app: {
-    padding: 10 * spacing.unit
+    padding: 10 * spacing.unit,
+    display: 'flex',
+    flexDirection: 'row'
+  },
+  left: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'column'
+  },
+  right: {
+    display: 'flex',
+    flex: 1
   }
 })
 
