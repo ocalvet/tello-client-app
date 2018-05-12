@@ -1,4 +1,13 @@
 import React from 'react';
+import Button from 'material-ui/Button';
+import AddIcon from '@material-ui/icons/Add';
+import { withStyles } from 'material-ui/styles';
+
+const styles = theme => ({
+  button: {
+    margin: theme.spacing.unit,
+  },
+});
 
 class Controls extends React.Component {
   async perform(action) {
@@ -11,16 +20,20 @@ class Controls extends React.Component {
     }
   }
   render () {
+    const { classes } = this.props;
     return (
       <div>
         <h1>Controls</h1>
-        <button onClick={() => {this.perform('takeoff')}}>Take Off</button>
-        <button onClick={() => {this.perform('land')}}>Land</button>
-        <button onClick={() => {this.perform('forward')}}>Forward</button>
-        <button onClick={() => {this.perform('back')}}>Back</button>
+        <Button variant="raised" color="primary" onClick={() => {this.perform('takeoff')}}>Take Off</Button>
+        <Button variant="raised" color="primary" onClick={() => {this.perform('land')}}>Land</Button>
+        <Button variant="raised" color="primary" onClick={() => {this.perform('forward')}}>Forward</Button>
+        <Button variant="raised" color="primary" onClick={() => {this.perform('back')}}>Back</Button>
+        <Button variant="fab" color="primary" aria-label="add" className={classes.button}>
+          <AddIcon />
+        </Button>
       </div>
     );
   }
 }
 
-export default Controls;
+export default withStyles(styles)(Controls);
