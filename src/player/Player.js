@@ -11,6 +11,9 @@ const styles = ({ spacing }) => {
 };
 
 class Player extends React.Component {
+  state = {
+    feedOn: false
+  }
   componentDidMount() {
     const { canvas } = this.refs;
     const ctx = canvas.getContext('2d');
@@ -18,13 +21,18 @@ class Player extends React.Component {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
 
+  toggleFeed() {
+    const feeding = this.state.feedOn;
+    this.setState({...this.state, feedOn: !feeding});
+  }
+
   render() {
     return (
       <div>
         <h1><span>Player</span><Button variant="raised" 
                 color="primary"
-                // onClick={() => {this.perform('land')}}
-                >Land</Button></h1>
+                onClick={() => {this.toggleFeed()}}
+                >{this.state.feedOn ? 'Off' : 'On'}</Button></h1>
         <canvas ref="canvas" width="500" height="500"></canvas>
       </div>
     );
