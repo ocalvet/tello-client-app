@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from 'material-ui';
+import Button from 'material-ui/Button';
 
 const styles = ({ spacing }) => {
   return {
@@ -20,7 +21,10 @@ class Player extends React.Component {
   render() {
     return (
       <div>
-        <h1>Player</h1>
+        <h1><span>Player</span><Button variant="raised" 
+                color="primary"
+                // onClick={() => {this.perform('land')}}
+                >Land</Button></h1>
         <canvas ref="canvas" width="500" height="500"></canvas>
       </div>
     );
