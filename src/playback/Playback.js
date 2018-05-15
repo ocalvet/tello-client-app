@@ -10,7 +10,11 @@ const styles = ({ spacing }) => {
   return {
     button: {
       margin: spacing.unit
-    }
+    },
+    centeredControls: {
+      display: 'flex',
+      justifyContent: 'center'
+    },
   };
 };
 
@@ -18,30 +22,36 @@ const Playback = ({ classes }) => {
   return (
     <div>
       <h1>Playback</h1>
-      <Button variant="fab" 
-              color="primary" 
-              aria-label="add" 
-              className={classes.button}>
-        <KeyboardArrowUp />
-      </Button>
-      <Button variant="fab" 
-              color="primary" 
-              aria-label="add" 
-              className={classes.button}>
-        <KeyboardArrowDown />
-      </Button>
-      <Button variant="fab" 
-              color="primary" 
-              aria-label="add" 
-              className={classes.button}>
-        <KeyboardArrowLeft />
-      </Button>
-      <Button variant="fab" 
-              color="primary" 
-              aria-label="add" 
-              className={classes.button}>
-        <KeyboardArrowRight />
-      </Button>
+      <div className={classes.centeredControls}>
+        <Button variant="fab"
+          color="primary"
+          aria-label="add"
+          className={classes.button}>
+          <KeyboardArrowUp />
+        </Button>
+      </div>
+      <div className={classes.centeredControls}>
+        <Button variant="fab"
+          color="primary"
+          aria-label="add"
+          className={classes.button}>
+          <KeyboardArrowDown />
+        </Button>
+        <Button variant="fab"
+          color="primary"
+          aria-label="add"
+          className={classes.button}>
+          <KeyboardArrowLeft />
+        </Button>
+      </div>
+      <div className={classes.centeredControls}>
+        <Button variant="fab"
+          color="primary"
+          aria-label="add"
+          className={classes.button}>
+          <KeyboardArrowRight />
+        </Button>
+      </div>
     </div>
   )
 }
