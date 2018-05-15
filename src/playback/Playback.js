@@ -13,7 +13,8 @@ const styles = ({ spacing }) => {
     },
     centeredControls: {
       display: 'flex',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      width: '50%'
     },
   };
 };
@@ -25,7 +26,7 @@ const Playback = ({ classes }) => {
       <div className={classes.centeredControls}>
         <Button variant="fab"
           color="primary"
-          aria-label="add"
+          aria-label="up"
           className={classes.button}>
           <KeyboardArrowUp />
         </Button>
@@ -33,23 +34,23 @@ const Playback = ({ classes }) => {
       <div className={classes.centeredControls}>
         <Button variant="fab"
           color="primary"
-          aria-label="add"
+          aria-label="left"
           className={classes.button}>
-          <KeyboardArrowDown />
+          <KeyboardArrowLeft />
         </Button>
         <Button variant="fab"
           color="primary"
-          aria-label="add"
+          aria-label="right"
           className={classes.button}>
-          <KeyboardArrowLeft />
+          <KeyboardArrowRight />
         </Button>
       </div>
       <div className={classes.centeredControls}>
         <Button variant="fab"
           color="primary"
-          aria-label="add"
+          aria-label="down"
           className={classes.button}>
-          <KeyboardArrowRight />
+          <KeyboardArrowDown />
         </Button>
       </div>
     </div>
