@@ -6,6 +6,9 @@ const styles = ({ spacing }) => {
   return {
     canvas: {
       margin: spacing.unit
+    },
+    title: {
+      marginRight: 15
     }
   };
 };
@@ -27,9 +30,10 @@ class Player extends React.Component {
   }
 
   render() {
+    const {classes} = this.props;
     return (
       <div>
-        <h1><span>Player</span><Button variant="raised" 
+        <h1><span className={classes.title}>Video</span><Button variant="raised" 
                 color="primary"
                 onClick={() => {this.toggleFeed()}}
                 >{this.state.feedOn ? 'Off' : 'On'}</Button></h1>
