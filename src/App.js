@@ -8,7 +8,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
-const styles = ({spacing}) => ({
+const styles = ({ spacing }) => ({
   root: {
     flexGrow: 1,
   },
@@ -40,15 +40,15 @@ class App extends Component {
             </Typography>
           </Toolbar>
         </AppBar>
-      <div className={classes.app}>
-        <div className={classes.left}>
-          <Controls />
-          <Playback />
+        <div className={classes.app}>
+          <div className={classes.left}>
+            <Controls />
+            <Playback />
+          </div>
+          <div className={classes.right}>
+            <Player />
+          </div>
         </div>
-        <div className={classes.right}>
-          <Player />
-        </div>
-      </div>
       </div>
     );
   }

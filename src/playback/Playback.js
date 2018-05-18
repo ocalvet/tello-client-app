@@ -16,6 +16,12 @@ const styles = ({ spacing }) => {
       justifyContent: 'center',
       width: '50%'
     },
+    leftCenter: {
+      marginRight: 25
+    },
+    rightCenter: {
+      marginLeft: 25
+    }
   };
 };
 
@@ -35,13 +41,13 @@ const Playback = ({ classes }) => {
         <Button variant="fab"
           color="primary"
           aria-label="left"
-          className={classes.button}>
+          className={`${classes.button} ${classes.leftCenter}`}>
           <KeyboardArrowLeft />
         </Button>
         <Button variant="fab"
           color="primary"
           aria-label="right"
-          className={classes.button}>
+          className={`${classes.button} ${classes.rightCenter}`}>
           <KeyboardArrowRight />
         </Button>
       </div>
