@@ -1,6 +1,6 @@
 import React from 'react';
-import { withStyles } from 'material-ui';
-import Button from 'material-ui/Button';
+import { withStyles } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 
 const styles = ({ spacing }) => {
   return {
