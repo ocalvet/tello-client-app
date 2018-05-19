@@ -25,42 +25,54 @@ const styles = ({ spacing }) => {
   };
 };
 
-const Playback = ({ classes }) => {
-  return (
-    <div>
-      <h1>Playback</h1>
-      <div className={classes.centeredControls}>
-        <Button variant="fab"
-          color="primary"
-          aria-label="up"
-          className={classes.button}>
-          <KeyboardArrowUp />
-        </Button>
+class Playback extends React.Component {
+  async perform(action) {
+    try {
+      const response = await fetch(`http://localhost:9081/tello/${action}`);
+      const json = await response.json();
+      console.log('JSON', json);
+    } catch (e) {
+      console.log(`error performing ${action}`, e);
+    }
+  }
+  render() {
+    const { classes } = this.props;
+    return (
+      <div>
+        <h1>Playback</h1>
+        <div className={classes.centeredControls}>
+          <Button variant="fab"
+            color="primary"
+            aria-label="up"
+            className={classes.button}>
+            <KeyboardArrowUp />
+          </Button>
+        </div>
+        <div className={classes.centeredControls}>
+          <Button variant="fab"
+            color="primary"
+            aria-label="left"
+            className={`${classes.button} ${classes.leftCenter}`}>
+            <KeyboardArrowLeft />
+          </Button>
+          <Button variant="fab"
+            color="primary"
+            aria-label="right"
+            className={`${classes.button} ${classes.rightCenter}`}>
+            <KeyboardArrowRight />
+          </Button>
+        </div>
+        <div className={classes.centeredControls}>
+          <Button variant="fab"
+            color="primary"
+            aria-label="down"
+            className={classes.button}>
+            <KeyboardArrowDown />
+          </Button>
+        </div>
       </div>
-      <div className={classes.centeredControls}>
-        <Button variant="fab"
-          color="primary"
-          aria-label="left"
-          className={`${classes.button} ${classes.leftCenter}`}>
-          <KeyboardArrowLeft />
-        </Button>
-        <Button variant="fab"
-          color="primary"
-          aria-label="right"
-          className={`${classes.button} ${classes.rightCenter}`}>
-          <KeyboardArrowRight />
-        </Button>
-      </div>
-      <div className={classes.centeredControls}>
-        <Button variant="fab"
-          color="primary"
-          aria-label="down"
-          className={classes.button}>
-          <KeyboardArrowDown />
-        </Button>
-      </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default withStyles(styles)(Playback);
