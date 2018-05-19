@@ -70,7 +70,7 @@ class Playback extends React.Component {
             color="primary"
             aria-label="down"
             className={classes.button}
-            onClick={() => {this.perform('down')}}>
+            onClick={() => {this.perform('backward')}}>
             <KeyboardArrowDown />
           </Button>
         </div>

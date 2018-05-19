@@ -17,6 +17,15 @@ class Player extends React.Component {
   state = {
     feedOn: false
   }
+  async perform(action) {
+    try {
+      const response = await fetch(`http://localhost:9081/tello/${action}`);
+      const json = await response.json();
+      console.log('JSON', json);
+    } catch (e) {
+      console.log(`error performing ${action}`, e);
+    }
+  }
   componentDidMount() {
     const { canvas } = this.refs;
     const ctx = canvas.getContext('2d');
@@ -24,9 +33,10 @@ class Player extends React.Component {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
 
-  toggleFeed() {
+  async toggleFeed() {
     const feeding = this.state.feedOn;
     this.setState({...this.state, feedOn: !feeding});
+    await this.perform(feeding ? 'startfeed' : 'endfeed');
   }
 
   render() {
