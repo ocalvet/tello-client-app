@@ -44,7 +44,8 @@ class Playback extends React.Component {
           <Button variant="fab"
             color="primary"
             aria-label="up"
-            className={classes.button}>
+            className={classes.button}
+            onClick={() => {this.perform('forward')}}>
             <KeyboardArrowUp />
           </Button>
         </div>
@@ -52,13 +53,15 @@ class Playback extends React.Component {
           <Button variant="fab"
             color="primary"
             aria-label="left"
-            className={`${classes.button} ${classes.leftCenter}`}>
+            className={`${classes.button} ${classes.leftCenter}`}
+            onClick={() => {this.perform('left')}}>
             <KeyboardArrowLeft />
           </Button>
           <Button variant="fab"
             color="primary"
             aria-label="right"
-            className={`${classes.button} ${classes.rightCenter}`}>
+            className={`${classes.button} ${classes.rightCenter}`}
+            onClick={() => {this.perform('right')}}>
             <KeyboardArrowRight />
           </Button>
         </div>
@@ -66,7 +69,8 @@ class Playback extends React.Component {
           <Button variant="fab"
             color="primary"
             aria-label="down"
-            className={classes.button}>
+            className={classes.button}
+            onClick={() => {this.perform('down')}}>
             <KeyboardArrowDown />
           </Button>
         </div>
